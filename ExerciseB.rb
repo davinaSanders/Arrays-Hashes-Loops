@@ -59,18 +59,21 @@ p users ["Jonathan"][:twitter]
 p users ["Erik"][:home_town]
 p users ["Erik"][:lottery_numbers]
 p users ["Avril"][:pets][0][:species]
-p users ["Erik"][:lottery_numbers][2]
-p users ["Erik"][:lottery_numbers].push(7)
-p users ["Erik"][:home_town] = "Edinburgh"
+p users ["Erik"][:lottery_numbers][2] # instead of locating the index you could have done .min(sorts it and outputs the minimum value) could have done .sort.first which does the same as the .min method
+p users ["Erik"][:lottery_numbers].push(7) # p users ["Erik"][:lottery_numbers] << 7 (can use instead of push)
+p users ["Erik"][:home_town] = "Edinburgh" # p users ["Erik"][:home_town].replace("Edinburgh")
+
+# dog = {:name => "Fluffy",
+#          :species => "dog"} (and then you could just put the variable dog inside the push brackets)
 p users ["Erik"][:pets].push({
   :name => "fluffy",
   :species => "dog"
   })
 p users["Davina"] = "student"
 
+users["Avril"][:lottery_numbers]
 
 
-avrilsArray = [12, 14, 33, 38, 9, 25]
 
 def even_array(array)
   lottery_array = []
@@ -81,6 +84,6 @@ for numbers in array
 end
 return lottery_array
 end
+# result.push(number) if (number.even?) is a quicker way to do this.
 
-
-p even_array(avrilsArray)
+p even_array(users["Avril"][:lottery_numbers])
